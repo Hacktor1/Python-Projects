@@ -1,0 +1,10 @@
+[
+    {
+        "title": "Finish homework",
+        "completed": false
+    },
+    {
+        "title": "Go to the gym",
+        "completed": true
+    }
+]

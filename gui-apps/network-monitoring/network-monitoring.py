@@ -17,7 +17,6 @@ class NetworkMonitor:
         self.upload_history = []
         self.time_history = []
 
-        # --- INPUT FRAME ---
         frame_input = tk.Frame(root, padx=10, pady=10)
         frame_input.pack(fill="x")
 
@@ -35,7 +34,6 @@ class NetworkMonitor:
         tk.Button(frame_input, text="Start Monitoring", command=self.start_monitoring).grid(row=0, column=5, padx=5)
         tk.Button(frame_input, text="Stop Monitoring", command=self.stop_monitoring).grid(row=0, column=6, padx=5)
 
-        # --- OUTPUT FRAME ---
         frame_output = tk.Frame(root, padx=10, pady=10)
         frame_output.pack(fill="both", expand=True)
 
@@ -43,7 +41,6 @@ class NetworkMonitor:
         self.label_result = tk.Label(frame_output, text="", font=("Arial", 12))
         self.label_result.pack(pady=5)
 
-        # --- GRAPH FRAME ---
         self.fig, self.ax = plt.subplots(figsize=(8,4))
         self.ax.set_title("Download & Upload Speed (Mbps)")
         self.ax.set_xlabel("Time")
@@ -55,13 +52,11 @@ class NetworkMonitor:
         self.canvas = FigureCanvasTkAgg(self.fig, master=frame_output)
         self.canvas.get_tk_widget().pack(fill="both", expand=True)
 
-        # Monitoring control
         self.monitoring = False
 
-    # --- SPEED TEST FUNCTIONS ---
     def test_speed(self):
         st = speedtest.Speedtest()
-        download = st.download() / 1e6  # Convert to Mbps
+        download = st.download() / 1e6
         upload = st.upload() / 1e6
         return round(download,2), round(upload,2)
 
@@ -75,7 +70,6 @@ class NetworkMonitor:
         except Exception as e:
             messagebox.showerror("Error", f"Speed test failed: {e}")
 
-    # --- HISTORY & GRAPH ---
     def update_history(self, download, upload):
         self.download_history.append(download)
         self.upload_history.append(upload)
@@ -94,7 +88,6 @@ class NetworkMonitor:
         self.ax.autoscale_view()
         self.canvas.draw()
 
-    # --- ALERT ---
     def check_alert(self, download):
         try:
             alert_threshold = float(self.entry_alert.get())
@@ -103,7 +96,6 @@ class NetworkMonitor:
         except:
             pass
 
-    # --- MONITORING THREAD ---
     def start_monitoring(self):
         if self.monitoring:
             return
@@ -117,7 +109,7 @@ class NetworkMonitor:
     def monitor_loop(self):
         while self.monitoring:
             self.test_speed_once()
-            time.sleep(60)  # every 60 seconds
+            time.sleep(60)
 
 if __name__ == "__main__":
     root = tk.Tk()

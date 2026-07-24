@@ -1,252 +1,41 @@
-\# 🎰 Mini Roulette – Tkinter Python Game
+# Mini Roulette
 
+A simple desktop mini-roulette game built in Python using the `tkinter` GUI library and `random` module. Players start with 100 points, place a bet, and choose between Red, Black, or Green with standard roulette odds.
 
+## Features
 
-Mini Roulette is a simple desktop roulette game built with Python and Tkinter.  
+* **Interactive GUI** — Clean, straightforward interface built with Tkinter
+* **Classic Betting Options** — Choose between Red, Black, and Green outcomes
+* **Weighted Probabilities** — Features a simulated roulette wheel layout (7 red slots, 7 black slots, and 1 green slot)
+* **Dynamic Payouts** —
+* Red / Black pays **2x** the bet
+* Green pays **14x** the bet
 
-The player starts with 100 points and can bet on Red, Black, or Green.
 
+* **Real-time Balance Tracking** — Updates point balance instantly after every spin
 
+## Project Structure
 
-It’s a lightweight project perfect for beginners learning:
+```
+mini-roulette/
+└── roulette.py         # Main script containing GUI layout and game logic
 
-\- Python basics
+```
 
-\- GUI development with Tkinter
+## Requirements & Dependencies
 
-\- Random number generation
+1. **Python**: Version 3.x
+2. **Library**:
+* `tkinter` (usually pre-installed with standard Python installations)
 
-\- Simple game logic
 
 
+## Setup and Running
 
+1. Save the Python script as `roulette.py`.
+2. Open your terminal or command prompt.
+3. Run the script:
+```bash
+python roulette.py
 
-
-\# 📸 Preview
-
-
-
-Small desktop window with:
-
-\- Points counter
-
-\- Bet input field
-
-\- Buttons for Red / Black / Green
-
-\- Result message display
-
-
-
-
-
-\# ⚙️ How It Works
-
-
-
-The game simulates a roulette wheel with the following color distribution:
-
-
-
-🔴 Red → 7 slots  
-
-⚫ Black → 7 slots  
-
-🟢 Green → 1 slot  
-
-
-
-Total: 15 possible outcomes
-
-
-
-
-
-\# 💰 Payout Rules
-
-
-
-Red   → x2  → 7/15  
-
-Black → x2  → 7/15  
-
-Green → x14 → 1/15  
-
-
-
-If you win on Red or Black, you receive 2× your bet.  
-
-If you win on Green, you receive 14× your bet.  
-
-If you lose, your bet is subtracted from your points.
-
-
-
-
-
-\# 🚀 Installation \& Usage
-
-
-
-\## Requirements
-
-
-
-\- Python 3.x installed  
-
-\- Tkinter (usually included with Python)  
-
-
-
-To check Python version:
-
-python --version
-
-
-
-
-
-\## Running the Game
-
-
-
-Save the file as:
-
-mini\_roulette.py
-
-
-
-Then run:
-
-python mini\_roulette.py
-
-
-
-The game window will open.
-
-
-
-
-
-\# 🎮 How to Play
-
-
-
-1\. Enter your bet amount in the input field.  
-
-2\. Click one of the color buttons:
-
-&nbsp;  - Red
-
-&nbsp;  - Black
-
-&nbsp;  - Green  
-
-3\. The game will randomly choose a result.  
-
-4\. Your points will update automatically.  
-
-5\. Try not to go bankrupt 😉
-
-
-
-
-
-\# 🧠 Code Overview
-
-
-
-The project contains:
-
-
-
-\## spin(color\_choice)
-
-
-
-Handles:
-
-\- Bet validation  
-
-\- Random color selection  
-
-\- Win/loss calculation  
-
-\- UI updates  
-
-
-
-\## Tkinter widgets
-
-
-
-\- Label for displaying points and results  
-
-\- Entry for bet input  
-
-\- Button for color selection  
-
-
-
-Random selection is handled by:
-
-random.choice(colors)
-
-
-
-
-
-\# 📌 Starting Points
-
-
-
-Players begin with:
-
-100 points
-
-
-
-
-
-\# 🛠 Possible Improvements
-
-
-
-\- Add sound effects  
-
-\- Add animations  
-
-\- Add reset button  
-
-\- Add game history log  
-
-\- Improve UI design  
-
-\- Add balance persistence (save to file)  
-
-\- Add real roulette wheel visualization  
-
-\- Fix label typo: "Body" → "Points"
-
-
-
-
-
-\# 📄 License
-
-
-
-This project is free to use and modify for educational purposes.
-
-
-
-
-
-\# 👨‍💻 Author
-
-
-
-Created as a simple Python Tkinter learning project.
-
-
-
+```
